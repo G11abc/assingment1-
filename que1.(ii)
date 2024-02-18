@@ -1,0 +1,27 @@
+/*passing entire array to function*/
+#include <stdio.h>
+int sum(int[], int);
+int main()
+{
+ int a[10],i ,res,n;
+ printf("input the limit of array\n");
+ scanf("%d",&n);
+ printf("input the array elements\n");
+ for(i=0;i<n;i++)
+ {
+ scanf("%d",&a[i]);
+ }
+
+ res=sum(a,n);
+ printf("\nsum of array elements %d",res);
+ return 0;
+}
+int sum(int a[], int n)
+{
+ int i,s=0;
+ for(i=0;i<n;i++)
+ {
+ s=s+a[i];
+ }
+ return s;
+}
