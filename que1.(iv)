@@ -1,0 +1,58 @@
+/* merge the elements of two sorted arrays so that the resulting array
+is also sorted without using sorting method */
+#include <stdio.h>
+int main()
+{
+int arr2[10],arr1[10],N,M,i;
+
+printf("Enter the size of the first array: ");
+scanf("%d", &M);
+printf("Enter the size of the second array: ");
+scanf("%d", &N);
+for (i = 0; i < M; i++)
+{
+scanf("%d", &arr1[i]);
+}
+printf("Enter %d elements for the second array:\n", N);
+for (i = 0; i < N; i++)
+{
+scanf("%d", &arr2[i]);
+}
+int merged[M + N];
+int j = 0, k = 0;
+i=0;
+while (i < M && j < N)
+{
+if (arr1[i] <= arr2[j])
+{
+merged[k] = arr1[i];
+i++;
+}
+else
+{
+merged[k] = arr2[j];
+j++;
+}
+k++;
+}
+while (i < M)
+{
+merged[k] = arr1[i];
+i++;
+k++;
+}
+while (j < N)
+{
+merged[k] = arr2[j];
+j++;
+k++;
+}
+
+printf("Merged and sorted array:\n");
+for (int i = 0; i < M + N; i++)
+{
+printf("%d ", merged[i]);
+}
+printf("\n");
+return 0;
+}
