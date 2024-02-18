@@ -1,0 +1,29 @@
+/* input an array and search how many elements
+are less than eqaul to or greater than a given elemnt*/
+#include <stdio.h>
+int main()
+{
+ int a[10], i, n,ele, cg=0,cs=0,ce=0;
+ printf(" Enter the limit of the array");
+ scanf("%d",&n); 
+ printf("input array element\n");
+ for(i=0;i<n;i++)
+ {
+ scanf("%d",&a[i]);
+ }
+ printf(" inputthe element to search");
+ scanf("%d",&ele);
+ 
+ for(i=0;i<n;i++)
+ {
+ if(ele==a[i])
+ ce++;
+ else if(ele>a[i])
+ cg++;
+ else
+ cs++;
+ }
+
+ printf(" greater %d smaller %d equal %d ", cg,cs,ce);
+ return 0;
+}
