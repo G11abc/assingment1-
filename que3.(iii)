@@ -1,0 +1,35 @@
+/*Smallest and largest element in array passing to function*/
+#include <stdio.h>
+
+
+void findSmallestLargest(int arr[], int size, int *smallest, int *largest) {
+    *smallest = arr[0];
+    *largest = arr[0];
+
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] < *smallest) {
+            *smallest = arr[i];
+        } else if (arr[i] > *largest) {
+            *largest = arr[i];
+        }
+    }
+}
+
+int main() {
+    int size, smallest, largest;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int elements[size];
+
+    
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < size; ++i) {
+        scanf("%d", &elements[i]);
+    }
+    findSmallestLargest(elements, size, &smallest, &largest);
+    printf("Smallest element: %d\n", smallest);
+    printf("Largest element: %d\n", largest);
+
+    return 0;
+}
