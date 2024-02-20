@@ -1,0 +1,38 @@
+/*amstrong number user defined function*/
+#include <stdio.h>
+#include <math.h>
+int isArm(int num)
+{
+ int orNum, rem, n = 0, res = 0;
+ orNum = num;
+
+ while (orNum != 0)
+ {
+ orNum = orNum /10;
+ ++n;
+ }
+ orNum = num;
+
+ while (orNum != 0)
+ {
+ rem = orNum % 10;
+ res =res + pow(rem, n);
+ orNum = orNum/ 10;
+ }
+ if (res == num)
+ return 1;
+ else
+ return 0;
+}
+
+int main()
+{
+ int number;
+ printf("Enter a number: ");
+ scanf("%d", &number);
+ if (isArm(number))
+ printf("%d is an Armstrong number.\n", number);
+ else
+ printf("%d is not an Armstrong number.\n", number);
+ return 0;
+}
