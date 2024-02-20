@@ -1,0 +1,33 @@
+/*Recursive code for Amstrong no.*/
+#include <stdio.h>
+#include <math.h>
+int isArm(int , int );
+int count(int );
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    int numDigits = count(number);
+    int result = isArm(number, numDigits);
+    if (result == number) {
+        printf("%d is an Armstrong number.\n", number);
+    } else {
+        printf("%d is not an Armstrong number.\n", number);
+    }
+
+    return 0;
+}
+int count(int num) {
+    if (num == 0) {
+        return 0;
+    }
+    return 1 + count(num / 10);
+}
+
+int isArm(int num, int n) {
+    if (num == 0) {
+        return 0;
+    }
+    return pow(num % 10, n) + isArm(num / 10, n);
+}
